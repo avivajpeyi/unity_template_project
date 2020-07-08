@@ -1,3 +1,4 @@
+![Test and Build 😎](https://github.com/avivajpeyi/unity_template_project/workflows/Test%20and%20Build%20%F0%9F%98%8E/badge.svg)
 ##### Unity Version: 2019.4.2f1 (LTS)
 
 # Unity Project Template
