@@ -1,5 +1,13 @@
 name: Acquire activation file
-on: [] # only need to do this once 
+on:   
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'
 jobs:
   activation:
     name: Request manual activation file 🔑
