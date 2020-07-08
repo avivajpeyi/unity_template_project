@@ -19,3 +19,6 @@ Unit tests are supposed to check the functionality of small units of your code, 
 2. only test what you code
 3. mock other's code
 4. categorize tests 
+
+
+## [CI Setup Steps](https://bearandhammer.net/2020/06/13/github-actions-unity-3d/)
