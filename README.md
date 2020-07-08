@@ -10,4 +10,12 @@
 * Github Action to build
 * Github Action to test
 
+## Principles of Unit Testing
 
+Unit tests are supposed to check the functionality of small units of your code, not the whole codebase. Unit tests are not meant to be integration tests/functional automation tests.
+
+### Requirements:
+1. 15ms run time for unit tests
+2. only test what you code
+3. mock other's code
+4. categorize tests 
