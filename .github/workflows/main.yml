@@ -61,6 +61,10 @@ jobs:
           path: build
           # ls ./build --> StandaloneOSX/ StandaloneWindows64/ ... WebGL
 
+  deploy:
+    name: Deploy Apps to itch.io
+    runs-on: ubuntu-latest
+    steps:
       # Deploy HTML to Itch (NOTE: will need to activate this on itchio)
       # https://itch.io/t/47990/how-to-use-butler-for-html-games
       - name: Deploy HTML build to itch.io
