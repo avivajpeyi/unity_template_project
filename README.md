@@ -1,3 +1,5 @@
+##### Unity Version: 2019.4.2f1 (LTS)
+
 # Unity Project Template
 
 ## TODO:
