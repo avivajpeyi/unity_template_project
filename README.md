@@ -1,4 +1,4 @@
-![Test and Build 😎](https://github.com/avivajpeyi/unity_template_project/workflows/Test%20and%20Build%20%F0%9F%98%8E/badge.svg)
+![Test+Build😎](https://github.com/avivajpeyi/unity_template_project/workflows/Test%20and%20Build%20%F0%9F%98%8E/badge.svg)
 ##### Unity Version: 2019.4.2f1 (LTS)
 
 # Unity Project Template
@@ -23,3 +23,4 @@ Unit tests are supposed to check the functionality of small units of your code, 
 
 
 ## [CI Setup Steps](https://bearandhammer.net/2020/06/13/github-actions-unity-3d/)
+## [Autodeploy to Itch](https://github.com/josephbmanley/butler-publish-itchio-action)
