@@ -8,7 +8,7 @@ env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
 jobs:
-  buildForSomePlatforms:
+  build:
     name: Build for ${{ matrix.targetPlatform }} on version ${{ matrix.unityVersion }}
     runs-on: ubuntu-latest
     strategy:
@@ -63,8 +63,11 @@ jobs:
 
   deploy:
     name: Deploy Apps to itch.io
+    needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: list dir
+        run: ls -la ./build/ 
       # Deploy HTML to Itch (NOTE: will need to activate this on itchio)
       # https://itch.io/t/47990/how-to-use-butler-for-html-games
       - name: Deploy HTML build to itch.io
