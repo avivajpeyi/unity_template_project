@@ -66,6 +66,12 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Download builds ⤵️
+        uses: actions/download-artifact@v1
+        with:
+          name: Build
+      - name: list dir
+        run: ls ./*
       # Deploy HTML to Itch (NOTE: will need to activate this on itchio)
       # https://itch.io/t/47990/how-to-use-butler-for-html-games
       - name: Deploy HTML build to itch.io
@@ -75,7 +81,7 @@ jobs:
           CHANNEL: html5
           ITCH_GAME: unity-template
           ITCH_USER: avivajpeyi
-          PACKAGE: build/WebGL
+          PACKAGE: Build/build/WebGL
 
       # Deploy osx to Itch
       - name: Deploy OSX app to itch.io
@@ -85,7 +91,7 @@ jobs:
           CHANNEL: osx
           ITCH_GAME: unity-template
           ITCH_USER: avivajpeyi
-          PACKAGE: build/StandaloneOSX
+          PACKAGE: Build/build/StandaloneOSX
 
       # Deploy windows to Itch
       - name: Deploy windows app to itch.io
@@ -95,7 +101,7 @@ jobs:
           CHANNEL: windows
           ITCH_GAME: unity-template
           ITCH_USER: avivajpeyi
-          PACKAGE: build/StandaloneWindows64
+          PACKAGE: Build/build/StandaloneWindows64
 
         # Deploy windows to Itch
       - name: Deploy linux app to itch.io
@@ -105,4 +111,4 @@ jobs:
           CHANNEL: linux
           ITCH_GAME: unity-template
           ITCH_USER: avivajpeyi
-          PACKAGE: build/StandaloneLinux64
+          PACKAGE: Build/build/StandaloneLinux64
