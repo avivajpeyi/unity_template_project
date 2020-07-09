@@ -4,13 +4,13 @@
 
 # Unity Project Template
 
-## TODO:
-
+Has the following
 * Unit tests:
-  - [Editor Mode](https://medium.com/xrpractices/practical-unit-testing-in-unity3d-f8d5f777c5db)
-  - [Play  Mode](https://medium.com/xrpractices/practical-playmode-testing-in-unity3d-5ea455bf28b0)
-* Github Action to build
-* Github Action to test
+  - [x] [Editor Mode](https://medium.com/xrpractices/practical-unit-testing-in-unity3d-f8d5f777c5db)
+  - [ ] [Play  Mode](https://medium.com/xrpractices/practical-playmode-testing-in-unity3d-5ea455bf28b0)
+* [x] Github Action to test
+* [x] Github Action to build
+* [x] Github Action to upload to itch.io
 
 ## Principles of Unit Testing
 
@@ -22,6 +22,3 @@ Unit tests are supposed to check the functionality of small units of your code, 
 3. mock other's code
 4. categorize tests 
 
-
-## [CI Setup Steps](https://bearandhammer.net/2020/06/13/github-actions-unity-3d/)
-## [Autodeploy to Itch](https://github.com/josephbmanley/butler-publish-itchio-action)
