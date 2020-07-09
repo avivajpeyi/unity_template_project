@@ -20,9 +20,9 @@ jobs:
           - 2019.4.2f1
         targetPlatform:
           - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
-          - StandaloneWindows64 # Build a Windows 64-bit standalone.
-          - StandaloneLinux64 # Build a Linux 64-bit standalone.
-          - WebGL # Build a HTML playable in browser
+#           - StandaloneWindows64 # Build a Windows 64-bit standalone.
+#           - StandaloneLinux64 # Build a Linux 64-bit standalone.
+#           - WebGL # Build a HTML playable in browser
     steps:
       # Checkout
       - name: Checkout repository ⤵️
@@ -55,7 +55,7 @@ jobs:
 
       # Output 
       - name: Upload build ⤴️
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: Build
           path: build
@@ -67,21 +67,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download builds ⤵️
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v2
         with:
           name: Build
-      - name: list dir
-        run: ls ./*
+      - name: Display structure of downloaded files
+        run: ls -R
       # Deploy HTML to Itch (NOTE: will need to activate this on itchio)
       # https://itch.io/t/47990/how-to-use-butler-for-html-games
-      - name: Deploy HTML build to itch.io
-        uses: josephbmanley/butler-publish-itchio-action@master
-        env:
-          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
-          CHANNEL: html5
-          ITCH_GAME: unity-template
-          ITCH_USER: avivajpeyi
-          PACKAGE: WebGL
+#       - name: Deploy HTML build to itch.io
+#         uses: josephbmanley/butler-publish-itchio-action@master
+#         env:
+#           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+#           CHANNEL: html5
+#           ITCH_GAME: unity-template
+#           ITCH_USER: avivajpeyi
+#           PACKAGE: WebGL
 
       # Deploy osx to Itch
       - name: Deploy OSX app to itch.io
@@ -93,22 +93,22 @@ jobs:
           ITCH_USER: avivajpeyi
           PACKAGE: StandaloneOSX
 
-      # Deploy windows to Itch
-      - name: Deploy windows app to itch.io
-        uses: josephbmanley/butler-publish-itchio-action@master
-        env:
-          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
-          CHANNEL: windows
-          ITCH_GAME: unity-template
-          ITCH_USER: avivajpeyi
-          PACKAGE: StandaloneWindows64
+#       # Deploy windows to Itch
+#       - name: Deploy windows app to itch.io
+#         uses: josephbmanley/butler-publish-itchio-action@master
+#         env:
+#           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+#           CHANNEL: windows
+#           ITCH_GAME: unity-template
+#           ITCH_USER: avivajpeyi
+#           PACKAGE: StandaloneWindows64
 
-        # Deploy windows to Itch
-      - name: Deploy linux app to itch.io
-        uses: josephbmanley/butler-publish-itchio-action@master
-        env:
-          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
-          CHANNEL: linux
-          ITCH_GAME: unity-template
-          ITCH_USER: avivajpeyi
-          PACKAGE: StandaloneLinux64
+#         # Deploy linux to Itch
+#       - name: Deploy linux app to itch.io
+#         uses: josephbmanley/butler-publish-itchio-action@master
+#         env:
+#           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+#           CHANNEL: linux
+#           ITCH_GAME: unity-template
+#           ITCH_USER: avivajpeyi
+#           PACKAGE: StandaloneLinux64
