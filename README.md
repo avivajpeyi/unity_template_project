@@ -22,3 +22,9 @@ Unit tests are supposed to check the functionality of small units of your code, 
 3. mock other's code
 4. categorize tests 
 
+
+
+## Notes:
+- Unit testing filesize is massive
+- Butler credentials: ~/Library/ApplicationSupport/itch/butler_creds
+- Unity liscence: /Users/avaj0001/Documents/personal/UnityProjects/liscences/Unity_v20XX.x.ulf
